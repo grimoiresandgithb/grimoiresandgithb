@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender • Grimoires and Github</title>
+
+    <!-- Main site styles -->
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- Recommender script -->
+    <script src="/assets/js/recommender.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/reviews/index.html" class="nav-link">Reviews & Writings</a>
+        <a href="/about/index.html" class="nav-link">About</a>
+        <a href="#" class="nav-link">Contact</a>
+        <a href="/recommender.html" class="nav-link">Recommender</a>
+    </nav>
+
+    <!-- Header -->
+    <header class="hero">
+        <h1>Book Recommender</h1>
+        <p class="tagline">Summon a story from the literary ether</p>
+    </header>
+
+    <!-- Controls Section -->
+    <section class="container" style="text-align:center; margin-top:3rem;">
+        <h2>Choose Your Magic</h2>
+
+        <div class="rec-controls">
+
+            <!-- Chaos Mode -->
+            <button class="rec-button" onclick="chaosMode()">Chaos Mode</button>
+
+            <!-- Genre Buttons -->
+            <h3 style="margin-top:2rem;">By Genre</h3>
+            <button class="rec-button" onclick="genreMode('science_fiction')">Sci‑Fi</button>
+            <button class="rec-button" onclick="genreMode('fantasy')">Fantasy</button>
+            <button class="rec-button" onclick="genreMode('romance')">Romance</button>
+            <button class="rec-button" onclick="genreMode('detective_and_mystery_stories')">Mystery</button>
+            <button class="rec-button" onclick="genreMode('horror_tales')">Horror</button>
+
+            <!-- Mood Buttons -->
+            <h3 style="margin-top:2rem;">By Mood</h3>
+            <button class="rec-button" onclick="moodMode('friendship')">Cozy</button>
+            <button class="rec-button" onclick="moodMode('dystopia')">Dark</button>
+            <button class="rec-button" onclick="moodMode('adventure')">Adventurous</button>
+            <button class="rec-button" onclick="moodMode('romance')">Romantic</button>
+            <button class="rec-button" onclick="moodMode('philosophy')">Thought‑provoking</button>
+
+            <!-- Keyword Search -->
+            <h3 style="margin-top:2rem;">Keyword Search</h3>
+            <input id="keyword-input" type="text" placeholder="Enter a keyword..."
+                   style="padding:0.6rem; border-radius:8px; border:1px solid var(--surface-alt); width:220px;">
+            <button class="rec-button" onclick="keywordMode(document.getElementById('keyword-input').value)">
+                Search
+            </button>
+
+        </div>
+    </section>
+
+    <!-- Recommendation Output -->
+    <section id="recommendation-output" class="container"></section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Alyssa DaCosta</p>
+    </footer>
+
+</body>
+</html>

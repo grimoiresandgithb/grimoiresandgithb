@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Mad Ship",
+    "genre": "fantasy",
+    "summary": "A relentless, character-driven second installment full of adventure, emotional depth, and morally grey brilliance.",
+    "link": "review_madship.html",
+    "rating": 5,
+    "year_read": 2025,
+    "tags": ["character-driven", "morally-grey", "nautical", "dragons", "trauma", "political", "found-family"]
+  },
+  {
+    "title": "Ship of Destiny",
+    "genre": "fantasy",
+    "summary": "A powerful, bittersweet conclusion exploring identity, trauma, dragons, and the cost of survival.",
+    "link": "review_shipofdestiny.html",
+    "rating": 5,
+    "year_read": 2025,
+    "tags": ["emotional", "dragons", "political-upheaval", "identity", "trauma", "bittersweet"]
+  },
+  {
+    "title": "Dungeon Crawler Carl",
+    "genre": "litrpg",
+    "summary": "Chaotic, hilarious, dark, and surprisingly sharp—gaming culture meets anti-capitalist satire.",
+    "link": "review_dungeoncrawlercarl.html",
+    "rating": 5,
+    "year_read": 2025,
+    "tags": ["funny", "violent", "gaming", "anti-capitalist", "satire", "trauma", "dark-humor"]
+  },
+  {
+    "title": "I'm Glad My Mom Died",
+    "genre": "nonfiction",
+    "summary": "A raw, darkly funny memoir about trauma, identity, and reclaiming your life after surviving it.",
+    "link": "review_gladmymomdied.html",
+    "rating": 5,
+    "year_read": 2025,
+    "tags": ["memoir", "trauma", "healing", "dark-humor", "millennial", "celebrity-culture"]
+  },
+  {
+    "title": "Somewhere Beyond the Sea",
+    "genre": "fantasy",
+    "summary": "A warm, queer, hopeful story about chosen family, healing, and the magic of kindness.",
+    "link": "review_somewherebeyondthesea.html",
+    "rating": 5,
+    "year_read": 2025,
+    "tags": ["queer", "chosen-family", "healing", "hopeful", "soft-magic", "comfort-read"]
+  },
+  {
+    "title": "The Willful Princess and the Piebald Prince",
+    "genre": "fantasy",
+    "summary": "A chaotic, darkly funny adventure blending game mechanics with sharp social commentary.",
+    "link": "review_willfulprincess.html",
+    "rating": 4,
+    "year_read": 2024,
+    "tags": ["funny", "violent", "gaming", "anti-capitalist", "satire", "dark-humor"]
+  },
+  {
+    "title": "How To Stop Time",
+    "genre": "romance",
+    "summary": "A charming, bittersweet romance exploring love, loss, and the passage of time.",
+    "link": "review_howtostoptime.html",
+    "rating": 3,
+    "year_read": 2024,
+    "tags": ["romance", "bittersweet", "time-travel", "historical", "emotional"]
+  }
+]

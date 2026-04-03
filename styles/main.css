@@ -1,10 +1,535 @@
+/* -------------------------------- */ 
+/*          COLOR PALETTE           */ 
+/* -------------------------------- */
+
 :root {
-    --parchment: #f4f0e5;
-    --charcoal: #2e2a27;
-    --lavender-smoke: #c8bca8;
-    --moonstone: #7a8fa3;
-    --blood-red: #8b2e3f;
-    --moss: #5c6e58;
-    --rose-blush: #d8a5a5;
-    --witchy-purple: #6e4b7b;
+    --background: #f7f3ef; /* warm parchment */
+    --surface: #f0ebe6; /* soft card background */
+    --surface-alt: #e7e1db; /* subtle contrast */
+    --lavender-smoke: #dcd4e6; /* muted lavender */
+    --witchy-purple: #5a3e85; /* deep purple */
+    --witchy-purple-soft: #7a5ca3; /* softened version */
+    --charcoal: #3a3532; /* warm charcoal */
+    --charcoal-soft: #4a4542; /* softer text */
+    --blood-red: #8b1e3f; /* rich blood red */
+    --rose-blush: #d9a6b7; /* soft pink */
+    --moss: #7a8f6a; /* earthy moss green */
+    --moonstone: #b8c4d4; /* cool moonstone blue */
+    --litrpg-blue: #6aa9ff; /* bright but soft digital blue */
+    --memoir-clay: #b58a7a; /* warm, grounded clay */
+
 }
+
+/* -------------------------------- */ 
+/*          GLOBAL STYLES           */ 
+/* -------------------------------- */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--charcoal);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--witchy-purple);
+    letter-spacing: 0.5px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+
+/* -------------------------------- */ 
+/*          NAV BAR                */ 
+/* -------------------------------- */
+
+.site-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--surface-alt);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--charcoal);
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+.nav-link:hover {
+    background-color: var(--lavender-smoke);
+    color: var(--witchy-purple);
+}
+
+
+/* -------------------------------- */ 
+/*          HEADER + FOOTER         */ 
+/* -------------------------------- */
+
+
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(to bottom, var(--lavender-smoke), var(--surface));
+    border-bottom: 2px solid var(--witchy-purple);
+}
+
+h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+.tagline {
+    font-style: italic;
+    color: var(--charcoal-soft);
+    margin-top: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: var(--moss);
+    border-top: 2px solid var(--witchy-purple);
+}
+
+
+
+/* -------------------------------- */ 
+/*              HERO                 */ 
+/* -------------------------------- */
+
+.hero {
+    text-align: center;
+    padding: 5rem 1rem 4rem;
+    background: linear-gradient(
+        to bottom,
+        var(--lavender-smoke),
+        var(--surface)
+    );
+    border-bottom: 2px solid var(--witchy-purple);
+}
+
+.hero h1 {
+    font-size: 3.4rem;
+    margin: 0;
+}
+
+.hero p {
+    font-style: italic;
+    color: var(--charcoal-soft);
+    margin-top: 0.5rem;
+}
+
+
+/* -------------------------------- */ 
+/*            REVIEW CARDS          */ 
+/* -------------------------------- */
+
+
+#home-review-cards {
+    max-width: 900px;
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.home-review-card {
+    background-color: var(--surface);
+    border: 1px solid var(--surface-alt);
+    padding: 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.home-review-card h3 {
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.review-cards {
+    max-width: 900px;
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.2rem;
+}
+
+.review-card {
+    background-color: var(--surface);
+    border: 1px solid var(--surface-alt);
+    padding: 1.75rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.review-card h3 {
+    margin-top: 0;
+    color: var(--witchy-purple-soft);
+}
+
+.review-card .summary {
+    color: var(--charcoal);
+    margin: 0.5rem 0 1rem;
+}
+
+/* Read More Link */
+
+.read-more {
+    color: var(--blood-red);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+    color: var(--rose-blush);
+}
+
+
+/* -------------------------------- */ 
+/*         GENRE TAGS              */ 
+/* -------------------------------- */
+
+.genre-tag {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--surface);
+    margin-bottom: 0.5rem;
+}
+
+.genre-tag.fantasy { background-color: var(--witchy-purple); } 
+.genre-tag.romance { background-color: var(--rose-blush); } 
+.genre-tag.horror { background-color: var(--blood-red); } 
+.genre-tag.scifi { background-color: var(--moonstone); } 
+.genre-tag.mystery { background-color: var(--moss); } 
+.genre-tag.litrpg { background-color: var(--witchy-purple-soft); } 
+.genre-tag.nonfiction { background-color: var(--charcoal-soft); }
+.genre-tag.litrpg { background-color: var(--litrpg-blue); }
+.genre-tag.nonfiction { background-color: var(--memoir-clay); }
+
+
+/* -------------------------------- */ 
+/*          BOOK SHELF              */ 
+/* -------------------------------- */
+
+.bookshelf {
+    max-width: 900px; 
+    margin: 3rem auto; 
+    padding: 2rem 1rem; 
+    text-align: center;
+}
+
+.shelf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 2rem 1.2rem;
+    position: relative;
+}
+
+.bookshelf::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    background: #c8b8a8;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.shelf-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.shelf-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.book-spine {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 90px; 
+    height: 240px; 
+    border-radius: 4px; 
+    text-decoration: none; 
+    color: var(--surface); 
+    font-weight: bold; 
+    writing-mode: vertical-lr; 
+    text-orientation: mixed; 
+    padding: 1rem; 
+    
+    /* Book texture */ 
+    background-image: linear-gradient( to bottom, rgba(255,255,255,0.15), rgba(0,0,0,0.1) ); 
+    border: 2px solid rgba(0,0,0,0.2); 
+    box-shadow: inset 0 0 6px rgba(255,255,255,0.2), 0 6px 12px rgba(0,0,0,0.2); 
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+.book-spine:hover {
+    transform: translateY(-8px) scale(1.04); 
+    box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+}
+
+.book-spine.fantasy { background-color: var(--witchy-purple); } 
+.book-spine.romance { background-color: var(--rose-blush); } 
+.book-spine.horror { background-color: var(--blood-red); } 
+.book-spine.scifi { background-color: var(--moonstone); } 
+.book-spine.mystery { background-color: var(--moss); }
+.book-spine.litrpg { background-color: var(--litrpg-blue); }
+.book-spine.nonfiction { background-color: var(--memoir-clay); }
+
+
+/* -------------------------------- */ 
+/*          BOOK SHELF              */ 
+/* -------------------------------- */
+
+.review-header {
+    text-align: center;
+    padding: 4rem 1rem 3rem;
+    background: linear-gradient(to bottom, var(--lavender-smoke), var(--surface));
+    border-bottom: 2px solid var(--witchy-purple);
+}
+
+.review-header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+}
+
+
+.review-meta {
+    margin-top: 0.5rem;
+    color: var(--charcoal);
+    font-style: italic;
+}
+
+.review-content {
+    max-width: 750px;
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+}
+
+.review-section {
+    margin-bottom: 2rem;
+}
+
+.review-section h2 {
+    border-bottom: 1px solid var(--lavender-smoke);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.review-section p {
+    line-height: 1.6;
+    color: var(--charcoal);
+}
+
+/* Quotes */
+
+blockquote {
+    margin: 1re 0;
+    padding: 1rem 1.5rem;
+    background-color: var(--surface);
+    border-left: 4px solid var(--witchy-purple);
+    font-style: italic;
+    color: var(--charcoal);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--blood-red);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+    color: var(--rose-blush);
+}
+
+/* Other Writings */
+
+.writing-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.writing-list li {
+    margin-bottom: 0.75rem;
+}   
+
+.writing-list a {
+    color: var(--blood-red);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.writing-list a:hover {
+    text-decoration: underline;
+    color: var(--rose-blush);
+}
+
+
+.about-photo {
+    width: 220px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 2rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+
+/* -------------------------------- */ 
+/*     BOOK RECOMMENDATION CARD     */ 
+/* -------------------------------- */
+
+#recommendation-output {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.rec-card {
+    background: var(--surface);
+    border: 1px solid var(--surface-alt);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    animation: fadeIn 0.4s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative top border flourish */
+.rec-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(
+        to right,
+        var(--witchy-purple),
+        var(--lavender-smoke),
+        var(--witchy-purple)
+    );
+}
+
+.rec-card h2 {
+    margin-top: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--witchy-purple);
+}
+
+.rec-card p {
+    margin: 0.5rem 0 1rem;
+    color: var(--charcoal);
+}
+
+.rec-label {
+    font-weight: bold;
+    color: var(--witchy-purple-soft);
+}
+
+/* Genre + tags styling */
+.rec-tags {
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    background: var(--surface-alt);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: var(--charcoal-soft);
+}
+
+/* Summary box */
+.rec-summary {
+    margin-top: 1.5rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--surface);
+    border-left: 4px solid var(--witchy-purple);
+    border-radius: 6px;
+    font-style: italic;
+    color: var(--charcoal);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* -------------------------------- */ 
+/*         RECOMMENDER BUTTONS      */ 
+/* -------------------------------- */
+
+.rec-controls {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.rec-button {
+    background: var(--lavender-smoke);
+    color: var(--charcoal);
+    border: 1px solid var(--surface-alt);
+    padding: 0.6rem 1.2rem;
+    margin: 0.4rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.rec-button:hover {
+    background: var(--witchy-purple-soft);
+    color: var(--surface);
+    transform: translateY(-2px);
+}
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews & Writings</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="site-nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../reviews/index.html" class="nav-link">Reviews & Writings</a>
+        <a href="../about.html" class="nav-link">About</a>
+        <a href="#" class="nav-link">Contact</a>
+    </nav>
+    
+    <header class="review-header container">
+        <h1>Reviews & Writings</h1>
+        <p class="tagline">A collection of book reviews and literary reflections</p>
+    </header>
+
+    <main class="review-content container">
+
+        <section class="review-section">
+            <h2>Book Reviews</h2>
+
+            <div id="reviews-container" class="review-cards"></div>
+
+            <script>
+                fetch('reviews.json')
+                    .then(response => response.json())
+                    .then(reviews => {
+                        const container = document.getElementById('reviews-container');
+                        reviews.forEach(review => {
+                            const card = document.createElement('div');
+                            card.className = 'review-card';
+                            card.innerHTML = `
+                                <h3>${review.title}</h3>
+                                <p><strong>Genre:</strong> ${review.genre}</p>
+                                <p>${review.summary}</p>
+                                <a href="${review.link}" class="read-more">Read Full Review</a>
+                            `;
+                            container.appendChild(card);
+                        });
+                    })
+                    .catch(error => console.error('Error loading reviews:', error));
+            </script>
+
+        <section class="review-section">
+            <h2>Other Writings</h2>
+            <p class="summary">Short stories, essays, and reflections on literature and life.</p>
+
+            <ul class="writing-list">
+                <li><a href="../writings/short-story-1.html">Short Story 1: The Enchanted Forest</a></li>
+                <li><a href="../writings/essay-on-reading.html">Essay: The Joy of Reading</a></li>
+                <li><a href="../writings/literary-reflection.html">Reflection: The Power of Storytelling</a></li>
+            </ul>
+        </section>
+
+        <a href="../index.html" class="back-link"><- Back to Home</a>
+    </main>
+    
+</body>
+</html>

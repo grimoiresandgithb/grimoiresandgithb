@@ -4,25 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sample HTML Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles/main.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
+
+    <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="reviews/index.html" class="nav-link">Reviews & Writings</a>
+        <a href="about/index.html" class="nav-link">About</a>
+        <a href="#" class="nav-link">Contact</a>
+        <a href="/recommender.html" class="nav-link">Recommender</a>
+    </nav>
+    <header class="hero">
         <h1>Grimoires and Github</h1>
         <p class="tagline">Review, reflections, and literary magic</p>
     </header>
 
-    <section class="reviews-list">
-        <h2>Latest Reviews</h2>
-        <ul>
-            <li><a href="reviews/book-title">Book Title</a></li>
-            <li><a href="reviews/another-book">Another Book</a></li>
-        </ul>
+
+    <!-- Bookshelf -->
+
+    <section class="bookshelf">
+        <h2 class="shelf-title">My Bookshelf </h2>
+
+        <div id="bookshelf-grid" class="shelf-grid"></div>
+    </section>
+
+
+
+    <!-- Review Cards Section -->
+
+    <section class="review-cards">
+        <div id="home-review-cards"></div>
+        
     </section>
 
     <footer>
         <p>&copy; 2026 Alyssa DaCosta</p>
     </footer>
+    <script>
+        // Bookshelf 
+        fetch('reviews/reviews.json') 
+            .then(r => r.json()) 
+            .then(reviews => { 
+                const shelf = document.getElementById('bookshelf-grid'); 
+                reviews.forEach(review => { 
+                    const spine = document.createElement('a'); 
+                    spine.classList.add('book-spine', review.genre.toLowerCase()); 
+                    spine.href = `reviews/${review.link}`; 
+                    spine.innerHTML = `<span>${review.title}</span>`; 
+                    shelf.appendChild(spine); 
+            }); 
+        });
+            
+            // Homepage review cards 
+        
+            fetch('reviews/reviews.json') 
+                .then(r => r.json()) 
+                .then(reviews => { 
+                    const container = document.getElementById('home-review-cards'); 
+                    reviews.slice(0, 20).forEach(review => { 
+                        const card = document.createElement('article'); 
+                        card.classList.add('home-review-card'); 
+                        card.innerHTML = ` <span class="genre-tag ${review.genre}">${review.genre}</span> 
+                        <h3>${review.title}</h3> 
+                        <p>${review.summary}</p> 
+                        <a href="reviews/${review.link}" class="read-more">Read full review →</a> 
+                        `; 
+                        
+                        container.appendChild(card); 
+                }); 
+            });
+</script>
+
 </body>
 </html>
